@@ -1,0 +1,41 @@
+@use '../base/variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:active,
+:hover,
+:focus {
+  outline: none;
+  outline-offset: none;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button,
+select {
+  cursor: pointer;
+}
