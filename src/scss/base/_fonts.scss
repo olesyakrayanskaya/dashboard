@@ -1,2 +1,17 @@
 @font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'), local('Open Sans'),
+    url('assets/fonts/OpenSans-Regular.woff') format('woff'),
+    url('assets/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: local('Avenir Next LT Pro'), local('Avenir Next LT Pro'),
+    url('assets/fonts/AvenirNextLTPro-Regular.woff') format('woff'),
+    url('assets/fonts/AvenirNextLTPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
