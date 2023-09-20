@@ -1,0 +1,56 @@
+@use '../base/variables';
+
+.nav {
+  width: 230px;
+  min-height: calc(100vh - 70px);
+  height: 100%;
+  background-color: variables.$navBcg;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 17px;
+    width: 100%;
+    height: 60px;
+    opacity: 0.502;
+    font-size: 14px;
+    line-height: 28px;
+    color: variables.$white;
+    font-weight: 400;
+    font-family: 'Open Sans';
+  }
+
+  &__item_active {
+    background-color: variables.$activeLink;
+    opacity: 1;
+  }
+
+  &__item:hover {
+    background-color: #455a64;
+  }
+
+  &__icon {
+    opacity: 0.502;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+  }
+}

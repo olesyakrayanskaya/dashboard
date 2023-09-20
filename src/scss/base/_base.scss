@@ -18,6 +18,10 @@ html {
   font-family: 'Avenir Next LT Pro', Arial, Helvetica, sans-serif;
 }
 
+.wrapper {
+  display: flex;
+}
+
 :active,
 :hover,
 :focus {
