@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 9" width="6" height="9">
+	<title>4</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 10px;line-height: 12px;text-transform: uppercase;fill: #37474f;font-family: "Avenir Next LT Pro" } 
+	</style>
+	<g id="4">
+		<g id="3">
+			<g id="Days">
+				<text id="f" style="transform: matrix(1.172,0,0,1.175,2.823,9)" >
+					<tspan x="-2.9" y="0" class="t0">F
+</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>
