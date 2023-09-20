@@ -11,7 +11,52 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <div class="header__inner header__inner_first">
+        <div class="header__logo logo">
+          <a href="index.html"
+            ><img
+              src="./assets/images/@justFree.svg"
+              alt="logo"
+              class="logo__icon"
+          /></a>
+        </div>
+        <div class="header__search search">
+          <label class="search__label" for="search">
+            <img
+              src="./assets/images/Search.svg"
+              alt="search"
+              class="search__icon"
+            />
+          </label>
+          <input
+            class="search__input"
+            type="search"
+            name="search"
+            id="searchID"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+      <div class="header__inner header__inner_second">
+        <button class="header__notifications notifications">
+          <img
+            src="./assets/images/Bell.svg"
+            alt="notifications"
+            class="notifications__icon"
+          />
+          <span class="notifications__amount">8</span>
+        </button>
+        <label for="select" class="header__select select">
+          <select name="select" id="selectID" class="header__select select">
+            <option class="select__option" selected>Filip J.</option>
+            <option class="select__option">Elise F.</option>
+            <option class="select__option">Jone W.</option>
+          </select>
+        </label>
+        <div class="header__user">F</div>
+      </div>
+    </header>
     <nav class="nav"></nav>
     <main class="main"></main>
   </body>

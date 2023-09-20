@@ -1,0 +1,41 @@
+@use '../base/variables';
+
+.search {
+  padding-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__input {
+    border: none;
+    background-color: inherit;
+    padding: 0 5px;
+    font-size: 14px;
+    line-height: 10px;
+    color: variables.$navBcg;
+    font-family: 'Avenir Next LT Pro';
+  }
+
+  &__input::placeholder {
+    font-size: 14px;
+    line-height: 10px;
+    color: variables.$navBcg;
+    font-family: 'Avenir Next LT Pro';
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    object-fit: contain;
+    margin-right: 7px;
+    margin-top: 5px;
+  }
+
+    @media (max-width: 430px) {
+      width: 100%;
+      height: 70px;
+      padding-left: 10px;
+      background-color: variables.$headerBcg;
+    }
+}

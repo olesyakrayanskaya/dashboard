@@ -1,0 +1,12 @@
+@use '../base/variables';
+
+.select {
+  border: none;
+  background-color: inherit;
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 28px;
+  color: variables.$navBcg;
+  font-family: 'Avenir Next LT Pro';
+  margin-right: 10px;
+}

@@ -1,0 +1,24 @@
+@use '../base/variables';
+
+.logo {
+  width: 230px;
+  height: 70px;
+  background-color: variables.$logoBcg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  @media (max-width: 670px) {
+    width: 180px;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
+
+}
