@@ -1,0 +1,89 @@
+@use '../base/variables';
+
+.progress {
+  width: 100%;
+  padding-top: 50px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 35px;
+    border-bottom: 2px solid rgba(#bcc7d3, 0.4);
+    margin-bottom: 40px;
+  }
+
+  &__header_box {
+    border-bottom: none;
+  }
+
+  &__title {
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: variables.$navBcg;
+    font-weight: 500;
+  }
+
+  &__title_inbox {
+    font-size: 21px;
+    line-height: 17px;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: variables.$navBcg;
+    letter-spacing: 0px;
+    opacity: 0.8;
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 21px;
+    color: #78909c;
+  }
+
+  &__timeline {
+    position: relative;
+  }
+
+  &__timeline::after {
+    content: url('assets/images/Down.svg');
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__box {
+    background-color: variables.$white;
+    box-shadow: 1px 1.732px 3px rgba(139, 157, 175, 0.1);
+    padding: 30px 20px;
+  }
+
+  &__box_lg {
+    width: 100%;
+  }
+
+  &__box_md {
+    width: 65%;
+  }
+
+  &__box_sm {
+    width: 32%;
+  }
+
+  &__box_low {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+}

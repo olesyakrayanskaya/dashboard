@@ -1,9 +1,9 @@
 @use '../base/variables';
 
 .nav {
-  width: 230px;
+  min-width: 230px;
   min-height: calc(100vh - 70px);
-  height: 100%;
+  height: auto;
   background-color: variables.$navBcg;
 
   &__list {

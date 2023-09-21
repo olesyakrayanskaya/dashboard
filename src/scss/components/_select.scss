@@ -7,6 +7,23 @@
   font-size: 14px;
   line-height: 28px;
   color: variables.$navBcg;
-  font-family: 'Avenir Next LT Pro';
   margin-right: 10px;
+
+  &_inbox {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &_grey {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: variables.$grey;
+    margin: 0 0 0 10px;
+    padding: 0 20px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }

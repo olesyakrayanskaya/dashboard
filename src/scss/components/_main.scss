@@ -1,0 +1,8 @@
+@use '../base/variables';
+
+.main {
+    background-color: variables.$mainBcg;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
