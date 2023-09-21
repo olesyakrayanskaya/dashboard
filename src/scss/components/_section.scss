@@ -77,13 +77,119 @@
 
   &__box_sm {
     width: 32%;
+    padding: 32px 25px;
+  }
+
+  &__box_sml {
+    width: 32%;
+    padding: 0;
   }
 
   &__box_low {
     width: 100%;
     display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__square {
+    width: 60px;
+    height: 60px;
+    border-radius: 2px;
+    background-color: variables.$grey;
+    margin-right: 35px;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 10px;
+  }
+
+  &__update {
+    font-size: 13px;
+    line-height: 23px;
+    color: variables.$navBcg;
+    margin-left: 140px;
+    margin-right: 50px;
+  }
+
+  &__time,
+  &__comments {
+    font-size: 14px;
+    line-height: 21px;
+    color: variables.$navBcg;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+
+    time,
+    span {
+      display: inline-block;
+      padding-top: 5px;
+    }
+  }
+
+  &__time {
+    margin-right: 20px;
+  }
+
+  &__comments {
+    margin-right: 60px;
+  }
+
+  &__line {
+    width: 200px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: variables.$grey;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  &__item:nth-child(2) {
+    border-top: 2px solid rgba(#bcc7d3, 0.4);
+    border-bottom: 2px solid rgba(#bcc7d3, 0.4);
+  }
+
+  .item__text {
+    font-size: 21px;
+    line-height: 17px;
+    color: variables.$navBcg;
+    text-align: center;
+    width: 40%;
+  }
+
+  .item__number {
+    margin-bottom: 5px;
+  }
+
+  .item__subtitle {
+    font-size: 14px;
+  }
+
+  &__sum {
+    text-align: center;
+    font-size: 32px;
+    line-height: 21px;
+    color: variables.$navBcg;
+  }
+
+  &__export {
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #a1b1c2;
   }
 }

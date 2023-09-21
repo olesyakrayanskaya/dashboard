@@ -6,11 +6,22 @@
   height: auto;
   background-color: variables.$navBcg;
 
+  @media (max-width: 670px) {
+    min-width: 180px;
+    width: 180px;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
+    position: sticky;
+    top: 70px;
+
+    @media (max-width: 670px) {
+      width: 180px;
+    }
   }
 
   &__item {

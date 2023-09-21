@@ -1,0 +1,93 @@
+@use '../base/variables';
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+
+  &__avatar {
+    position: relative;
+    margin-bottom: 35px;
+  }
+
+  &__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__online {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: #4bcf99;
+    border: 4px solid variables.$white;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 300;
+  }
+
+  &__name {
+    font-size: 18px;
+    line-height: 17px;
+    color: variables.$navBcg;
+    margin-bottom: 5px;
+  }
+
+  &__city {
+    font-size: 14px;
+    color: variables.$navBcg;
+    margin-bottom: 20px;
+  }
+
+  &__mail {
+    align-self: center;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: underline;
+    color: variables.$activeLink;
+    font-weight: bold;
+  }
+
+  .statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    grid-auto-flow: row;
+    width: 100%;
+    margin-bottom: 32px;
+
+    &__item {
+      padding: 20px;
+      border-top: 1px solid #dbe1e8;
+      border-bottom: 1px solid #dbe1e8;
+    }
+
+    &__item:nth-child(odd) {
+      border-right: 1px solid #dbe1e8;
+    }
+
+    &__subtitle {
+      display: block;
+      font-size: 14px;
+      line-height: 14px;
+      color: #a1b1c2;
+      font-weight: 400;
+      font-family: 'Open Sans';
+      margin-bottom: 10px;
+    }
+
+    &__data {
+      display: block;
+      font-size: 21px;
+      line-height: 21px;
+      color: variables.$navBcg;
+    }
+  }
+}
