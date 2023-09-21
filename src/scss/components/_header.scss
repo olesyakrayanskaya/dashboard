@@ -7,6 +7,7 @@
   padding: 13px 30px 13px 0;
   background-color: variables.$headerBcg;
   height: 70px;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 
@@ -21,6 +22,7 @@
   @media (max-width: 430px) {
     flex-direction: column;
     height: auto;
+    position: static;
   }
 
   &__inner {
@@ -55,8 +57,10 @@
     position: relative;
 
     img {
-      object-fit: contain;
-      object-position: center;
+      -o-object-fit: contain;
+         object-fit: contain;
+      -o-object-position: center;
+         object-position: center;
       width: 16px;
       height: 16px;
       border-radius: 4px;

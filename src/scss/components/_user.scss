@@ -16,8 +16,10 @@
     width: 120px;
     height: 120px;
     border-radius: 60px;
-    object-fit: cover;
-    object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
 
   &__online {

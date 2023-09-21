@@ -3,13 +3,37 @@
 .search {
   padding-left: 30px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 
   &__input {
     border: none;
     background-color: inherit;
     padding: 0 5px;
+    font-size: 14px;
+    line-height: 10px;
+    color: variables.$navBcg;
+  }
+
+  &__input::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 10px;
+    color: variables.$navBcg;
+  }
+
+  &__input::-moz-placeholder {
+    font-size: 14px;
+    line-height: 10px;
+    color: variables.$navBcg;
+  }
+
+  &__input:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 10px;
+    color: variables.$navBcg;
+  }
+
+  &__input::-ms-input-placeholder {
     font-size: 14px;
     line-height: 10px;
     color: variables.$navBcg;
@@ -25,7 +49,8 @@
     width: 18px;
     height: 18px;
     border-radius: 5px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     margin-right: 7px;
     margin-top: 5px;
   }

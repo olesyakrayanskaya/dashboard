@@ -12,6 +12,10 @@
   &_inbox {
     letter-spacing: 1px;
     text-transform: uppercase;
+
+    @media (max-width: 560px) {
+      margin-top: 10px;
+    }
   }
 
   &_grey {
@@ -25,5 +29,10 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+  }
+
+  @media (max-width: 560px) {
+    margin-right: 0;
+    margin-left: 0;
   }
 }

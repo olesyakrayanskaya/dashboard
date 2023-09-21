@@ -20,6 +20,11 @@ html {
 
 .wrapper {
   display: flex;
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+  }
+
 }
 
 .container {
