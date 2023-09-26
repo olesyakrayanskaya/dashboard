@@ -7,21 +7,23 @@ const progressSelect = document.getElementById('progress-selectID');
 const progressSelectBars = document.getElementById('progress-select-bars');
 const timeSelectIDFirst = document.getElementById('time-selectID-first');
 const timeSelectIDSecond = document.getElementById('time-selectID-second');
-const thisWeekSeries = [
+const thisWeekSeriesWaveChart = [
   [41, 51, 25, 50, 30, 50, 20],
   [53, 25, 50, 25, 55, 30, 50],
 ];
-const lastWeekSeries = [
+const lastWeekSeriesWaveChart = [
   [10, 51, 23, 50, 30, 55, 20],
   [8, 20, 50, 30, 55, 25, 50],
 ];
 const thisWeekSeriesBarChart = [50, 20, 60, 50, 55, 60, 65];
 const lastWeekSeriesBarChart = [35, 20, 55, 50, 55, 30, 65];
+let labelsLineChart = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+let seriesLineChart = [15, 10, 15, 8, 14, 9, 14];
 const barChartOptions = {
   distributeSeries: true,
   height: 200,
 };
-const options = {
+const waveChartOptions = {
   width: 100 + '%',
   height: 272,
   divisor: 10,
@@ -45,6 +47,15 @@ const options = {
   },
   chartPadding: {
     right: 40,
+  },
+};
+const lineChartOptions = {
+  fullWidth: true,
+  height: 200,
+  low: 5,
+  high: 20,
+  chartPadding: {
+    right: 30,
   },
 };
 
@@ -77,17 +88,8 @@ function getLastWeekLabelsData() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  let labelsData = getThisWeekLabelsData();
-  const data = {
-    labels: labelsData,
-    series: thisWeekSeries,
-  };
-  const barChartData = {
-    labels: labelsData,
-    series: thisWeekSeriesBarChart,
-  };
-  new LineChart('#wave', data, options);
-  new BarChart('#bars', barChartData, barChartOptions).on(
+  new LineChart('#wave', chartData('wave'), waveChartOptions);
+  new BarChart('#bars', chartData('bars'), barChartOptions).on(
     'draw',
     function (data) {
       if (data.type === 'bar') {
@@ -97,52 +99,108 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   );
+  new LineChart('#line-chart', chartData('line'), lineChartOptions);
 });
 
-progressSelect.addEventListener('change', () => {
-  let waveSeries = [];
-  let labelsData = [];
-  const waveParent = document.getElementById('wave').closest('.progress__box');
-  document.getElementById('wave').remove();
-  const wave = document.createElement('div');
-  wave.id = 'wave';
-  wave.className = 'ct-chart';
-  waveParent.append(wave);
+function redrawChartContainer(elemId) {
+  const parent = document.getElementById(elemId).closest('.progress__box');
+  document.getElementById(elemId).remove();
+  const elem = document.createElement('div');
+  elem.id = elemId;
+  elem.className = 'ct-chart';
+  parent.append(elem);
+}
+
+function chartData(chartType) {
+  let data = {};
+  let seriesWaveChart = [];
+  let seriesBarsChart = [];
+  let labels = [];
+  let newLabelsLineChart = [];
+  let newSeriesLineChart = [];
   if (progressSelect.value === 'this week') {
-    labelsData = getThisWeekLabelsData();
-    waveSeries = thisWeekSeries;
+    labels = getThisWeekLabelsData();
+    seriesWaveChart = thisWeekSeriesWaveChart;
   } else {
-    labelsData = getLastWeekLabelsData();
-    waveSeries = lastWeekSeries;
+    labels = getLastWeekLabelsData();
+    seriesWaveChart = lastWeekSeriesWaveChart;
   }
-  const newData = {
-    labels: labelsData,
-    series: waveSeries,
-  };
-  new LineChart('#wave', newData, options);
+  if (progressSelectBars.value === 'this week') {
+    labels = getThisWeekLabelsData();
+    seriesBarsChart = thisWeekSeriesBarChart;
+  } else {
+    labels = getLastWeekLabelsData();
+    seriesBarsChart = lastWeekSeriesBarChart;
+  }
+  let newLabels;
+  let newSeriesBarsChart;
+  switch (timeSelectIDFirst.value) {
+    case '7 days':
+      newSeriesBarsChart = seriesBarsChart;
+      newLabels = labels;
+      break;
+    case '6 days':
+      newSeriesBarsChart = seriesBarsChart.slice(1, 7);
+      newLabels = labels.slice(1, 7);
+      break;
+    case '5 days':
+      newSeriesBarsChart = seriesBarsChart.slice(2, 7);
+      newLabels = labels.slice(2, 7);
+      break;
+    default:
+      newSeriesBarsChart = seriesBarsChart;
+      newLabels = labels;
+  }
+  switch (timeSelectIDSecond.value) {
+    case '7 days':
+      newSeriesLineChart = seriesLineChart;
+      newLabelsLineChart = labelsLineChart;
+      break;
+    case '6 days':
+      newSeriesLineChart = seriesLineChart.slice(1, 7);
+      newLabelsLineChart = labelsLineChart.slice(1, 7);
+      break;
+    case '5 days':
+      newSeriesLineChart = seriesLineChart.slice(2, 7);
+      newLabelsLineChart = labelsLineChart.slice(2, 7);
+      break;
+    default:
+      newSeriesLineChart = seriesLineChart;
+      newLabelsLineChart = labelsLineChart;
+  }
+
+  switch (chartType) {
+    case 'wave':
+      return (data = {
+        series: seriesWaveChart,
+        labels: labels,
+      });
+      break;
+    case 'bars':
+      return (data = {
+        series: newSeriesBarsChart,
+        labels: newLabels,
+      });
+      break;
+    case 'line':
+      return (data = {
+        series: [newSeriesLineChart],
+        labels: newLabelsLineChart,
+      });
+      break;
+  }
+}
+
+progressSelect.addEventListener('change', () => {
+  chartData('wave');
+  redrawChartContainer('wave');
+  new LineChart('#wave', chartData('wave'), waveChartOptions);
 });
 
 progressSelectBars.addEventListener('change', () => {
-  let barsSeries = [];
-  let labelsData = [];
-  const barsParent = document.getElementById('bars').closest('.progress__box');
-  document.getElementById('bars').remove();
-  const bars = document.createElement('div');
-  bars.id = 'bars';
-  bars.className = 'ct-chart';
-  barsParent.append(bars);
-  if (progressSelectBars.value === 'this week') {
-    labelsData = getThisWeekLabelsData();
-    barsSeries = thisWeekSeriesBarChart;
-  } else {
-    labelsData = getLastWeekLabelsData();
-    barsSeries = lastWeekSeriesBarChart;
-  }
-  const newBarChartData = {
-    labels: labelsData,
-    series: barsSeries,
-  };
-  new BarChart('#bars', newBarChartData, barChartOptions).on(
+  chartData('bars');
+  redrawChartContainer('bars');
+  new BarChart('#bars', chartData('bars'), barChartOptions).on(
     'draw',
     function (data) {
       if (data.type === 'bar') {
@@ -154,19 +212,23 @@ progressSelectBars.addEventListener('change', () => {
   );
 });
 
-new LineChart(
-  '#line-chart',
-  {
-    labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    series: [[15, 10, 15, 8, 14, 9, 14]],
-  },
-  {
-    fullWidth: true,
-    height: 200,
-    low: 5,
-    high: 20,
-    chartPadding: {
-      right: 30,
-    },
-  }
-);
+timeSelectIDFirst.addEventListener('change', () => {
+  chartData('bars');
+  redrawChartContainer('bars');
+  new BarChart('#bars', chartData('bars'), barChartOptions).on(
+    'draw',
+    function (data) {
+      if (data.type === 'bar') {
+        data.element.attr({
+          style: 'stroke-width: 20px',
+        });
+      }
+    }
+  );
+});
+
+timeSelectIDSecond.addEventListener('change', () => {
+  chartData('line');
+  redrawChartContainer('line-chart');
+  new LineChart('#line-chart', chartData('line'), lineChartOptions);
+});

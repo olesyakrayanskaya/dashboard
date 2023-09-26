@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -263,5 +264,8 @@
     font-size: 12px;
     text-decoration: underline;
     color: #a1b1c2;
+    position: absolute;
+    bottom: 32px;
+    right: 25px;
   }
 }
