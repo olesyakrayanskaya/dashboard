@@ -3,11 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
-    />
-    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <title>Dashboard</title>
   </head>
   <body>
@@ -138,6 +133,7 @@
                   </option>
                 </select>
               </header>
+              <div id="wave" class="ct-chart"></div>
             </div>
           </section>
           <section class="progress">
@@ -155,7 +151,7 @@
                 >
                 <select
                   name="time-select"
-                  id="time-selectID"
+                  id="time-selectID-first"
                   class="progress__select select select_grey"
                 >
                   <option value="7 days" class="select__option" selected>
@@ -202,7 +198,7 @@
                   </div>
                   <select
                     name="progress-select"
-                    id="progress-selectID"
+                    id="progress-select-bars"
                     class="progress__select select select_inbox"
                   >
                     <option value="this week" class="select__option" selected>
@@ -213,6 +209,7 @@
                     </option>
                   </select>
                 </header>
+                <div id="bars" class="ct-chart"></div>
               </div>
             </div>
           </section>
@@ -358,7 +355,7 @@
                 >
                 <select
                   name="time-select"
-                  id="time-selectID"
+                  id="time-selectID-second"
                   class="progress__select select select_grey"
                 >
                   <option value="7 days" class="select__option" selected>
@@ -394,24 +391,26 @@
                 <div class="user__name">Jake Appleseed</div>
                 <div class="user__city">London, UK</div>
                 <div class="user__statistics statistics">
-                    <div class="statistics__item">
-                        <span class="statistics__subtitle">Working hours</span>
-                        <span class="statistics__data">14 hours</span>
-                    </div>
-                    <div class="statistics__item">
-                        <span class="statistics__subtitle">Ammount Total</span>
-                        <span class="statistics__data">$ 6,269</span>
-                    </div>
-                    <div class="statistics__item">
-                        <span class="statistics__subtitle">Overdue</span>
-                        <span class="statistics__data">$ 829</span>
-                    </div>
-                    <div class="statistics__item">
-                        <span class="statistics__subtitle">% overall work</span>
-                        <span class="statistics__data">48%</span>
-                    </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">Working hours</span>
+                    <span class="statistics__data">14 hours</span>
+                  </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">Ammount Total</span>
+                    <span class="statistics__data">$ 6,269</span>
+                  </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">Overdue</span>
+                    <span class="statistics__data">$ 829</span>
+                  </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">% overall work</span>
+                    <span class="statistics__data">48%</span>
+                  </div>
                 </div>
-                <a class="user__mail" href="mailto:krayanskaya_ov@mail.ru">Send Invoice</a>
+                <a class="user__mail" href="mailto:krayanskaya_ov@mail.ru"
+                  >Send Invoice</a
+                >
               </div>
               <div class="progress__box progress__box_sm">
                 <header class="progress__header progress__header_box">
@@ -425,6 +424,7 @@
                   </div>
                 </header>
                 <div class="progress__sum">$14,220</div>
+                <div id="line-chart" class="ct-chart"></div>
                 <button class="progress__export">Export PDF</button>
               </div>
             </div>
