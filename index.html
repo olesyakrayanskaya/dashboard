@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  <script defer src="index.163f526615fb3bea4440.js"></script><link href="index.c1eff885e2af61b8d775.css" rel="stylesheet"></head>
+  <body>
+    <header class="header">
+      <div class="header__inner header__inner_first">
+        <div class="header__logo logo">
+          <a href="index.html"
+            ><img
+              src="@justFree.5115790f3e0f9d6cec19.svg"
+              alt="logo"
+              class="logo__icon"
+          /></a>
+        </div>
+        <div class="header__search search">
+          <label class="search__label" for="searchID">
+            <img
+              src="Search.ceb1aad5423169542872.svg"
+              alt="search"
+              class="search__icon"
+            />
+          </label>
+          <input
+            class="search__input"
+            type="search"
+            name="search"
+            id="searchID"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+      <div class="header__inner header__inner_second">
+        <button class="header__notifications notifications">
+          <img
+            src="Bell.670c5d6349588c4d1bec.svg"
+            alt="notifications"
+            class="notifications__icon"
+          />
+          <span class="notifications__amount">8</span>
+        </button>
+        <label for="selectID" class="header__select select">
+          <select name="select" id="selectID" class="header__select select">
+            <option value="Filip J." class="select__option" selected>
+              Filip J.
+            </option>
+            <option value="Elise F." class="select__option">Elise F.</option>
+            <option value="Jone W." class="select__option">Jone W.</option>
+          </select>
+        </label>
+        <div class="header__user">F</div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item_active">
+            <img
+              src="Dashboard.253245283227850efa4a.svg"
+              alt="icon"
+              class="nav__icon"
+            />
+            <a class="nav__link" href="#">Home</a>
+          </li>
+          <li class="nav__item">
+            <img src="Clock.27a8fa47db1ec4d01302.svg" alt="icon" class="nav__icon" />
+            <a class="nav__link" href="#">Time Management</a>
+          </li>
+          <li class="nav__item">
+            <img src="Box.e86fa2877b0e3fdde9a0.svg" alt="icon" class="nav__icon" />
+            <a class="nav__link" href="#">Inbox</a>
+          </li>
+          <li class="nav__item">
+            <img
+              src="Calendar.46883057f1fde033941c.svg"
+              alt="icon"
+              class="nav__icon"
+            />
+            <a class="nav__link" href="#">Calendar</a>
+          </li>
+          <li class="nav__item">
+            <img
+              src="Activity.ef96a68f51114313d849.svg"
+              alt="icon"
+              class="nav__icon"
+            />
+            <a class="nav__link" href="#">Analytics</a>
+          </li>
+          <li class="nav__item">
+            <img
+              src="Cogwheel.29689fab1a50caddce8a.svg"
+              alt="icon"
+              class="nav__icon"
+            />
+            <a class="nav__link" href="#">Settings</a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main">
+        <div class="container">
+          <section class="progress">
+            <header class="progress__header">
+              <div class="progress__titles">
+                <h3 class="progress__title">Hi Filip,</h3>
+                <h4 class="progress__subtitle">
+                  Checkout your latest projects and their progress.
+                </h4>
+              </div>
+            </header>
+            <div class="progress__box progress__box_lg">
+              <header class="progress__header progress__header_box">
+                <div class="progress__titles">
+                  <h3 class="progress__title progress__title_inbox">
+                    Wavy Lines
+                  </h3>
+                  <h4 class="progress__subtitle progress__subtitle_inbox">
+                    Working Hours
+                  </h4>
+                </div>
+                <select
+                  name="progress-select"
+                  id="progress-selectID"
+                  class="progress__select select select_inbox"
+                >
+                  <option value="this week" class="select__option" selected>
+                    this week
+                  </option>
+                  <option value="last week" class="select__option">
+                    last week
+                  </option>
+                </select>
+              </header>
+              <div id="wave" class="ct-chart"></div>
+            </div>
+          </section>
+          <section class="progress">
+            <header class="progress__header">
+              <div class="progress__titles">
+                <h3 class="progress__title">Crunch some Numbers</h3>
+                <h4 class="progress__subtitle">
+                  See how your projects are progressing via the new statistics
+                  engine.
+                </h4>
+              </div>
+              <div class="progress__timeline">
+                <label for="time-selectID-first" class="progress__label"
+                  >Timeline:</label
+                >
+                <select
+                  name="time-select"
+                  id="time-selectID-first"
+                  class="progress__select select select_grey"
+                >
+                  <option value="7 days" class="select__option" selected>
+                    7 days
+                  </option>
+                  <option value="6 days" class="select__option">6 days</option>
+                  <option value="5 days" class="select__option">5 days</option>
+                </select>
+              </div>
+            </header>
+            <div class="progress__container">
+              <div class="progress__box progress__box_sml">
+                <div class="progress__item item">
+                  <div class="item__text">
+                    <div class="item__number">96</div>
+                    <div class="item__subtitle">Working Hours</div>
+                  </div>
+                  <div class="item__diagram"></div>
+                </div>
+                <div class="progress__item item">
+                  <div class="item__text">
+                    <div class="item__number">1,204</div>
+                    <div class="item__subtitle">Conversations</div>
+                  </div>
+                  <div class="item__diagram"></div>
+                </div>
+                <div class="progress__item item">
+                  <div class="item__text">
+                    <div class="item__number">7</div>
+                    <div class="item__subtitle">People</div>
+                  </div>
+                  <div class="item__diagram"></div>
+                </div>
+              </div>
+              <div class="progress__box progress__box_md">
+                <header class="progress__header progress__header_box">
+                  <div class="progress__titles">
+                    <h3 class="progress__title progress__title_inbox">
+                      Daily Progress
+                    </h3>
+                    <h4 class="progress__subtitle progress__subtitle_inbox">
+                      Working Hours
+                    </h4>
+                  </div>
+                  <select
+                    name="progress-select"
+                    id="progress-select-bars"
+                    class="progress__select select select_inbox"
+                  >
+                    <option value="this week" class="select__option" selected>
+                      this week
+                    </option>
+                    <option value="last week" class="select__option">
+                      last week
+                    </option>
+                  </select>
+                </header>
+                <div id="bars" class="ct-chart"></div>
+              </div>
+            </div>
+          </section>
+          <section class="progress">
+            <header class="progress__header">
+              <div class="progress__titles">
+                <h3 class="progress__title">Current Progress</h3>
+                <h4 class="progress__subtitle">
+                  This table will show you how your current projects are
+                  behaving.
+                </h4>
+              </div>
+            </header>
+            <div class="progress__box progress__box_low">
+              <div class="progress__square"></div>
+              <div class="progress__titles">
+                <h3 class="progress__title progress__title_inbox">
+                  Project Title
+                </h3>
+                <h4 class="progress__subtitle progress__subtitle_inbox">
+                  Design & Development
+                </h4>
+              </div>
+              <div class="progress__update">Last updated Today at 4:24 AM</div>
+              <div class="progress__time">
+                <img
+                  src="ClockDark.96cc345d15fe378db3e9.svg"
+                  alt="time"
+                  class="progress__icon"
+                />
+                <span>26:30</span>
+              </div>
+              <div class="progress__comments">
+                <img
+                  src="Says.bcfe3b66bde14225bebe.svg"
+                  alt="comments"
+                  class="progress__icon"
+                />
+                <span>624</span>
+              </div>
+              <div class="progress__line">
+                <div class="progress__color-line progress__color-line_1"></div>
+              </div>
+            </div>
+            <div class="progress__box progress__box_low">
+              <div class="progress__square"></div>
+              <div class="progress__titles">
+                <h3 class="progress__title progress__title_inbox">
+                  Project Title
+                </h3>
+                <h4 class="progress__subtitle progress__subtitle_inbox">
+                  Design & Development
+                </h4>
+              </div>
+              <div class="progress__update">Last updated Today at 4:24 AM</div>
+              <div class="progress__time">
+                <img
+                  src="ClockDark.96cc345d15fe378db3e9.svg"
+                  alt="time"
+                  class="progress__icon"
+                />
+                <span>26:30</span>
+              </div>
+              <div class="progress__comments">
+                <img
+                  src="Says.bcfe3b66bde14225bebe.svg"
+                  alt="comments"
+                  class="progress__icon"
+                />
+                <span>624</span>
+              </div>
+              <div class="progress__line">
+                <div class="progress__color-line progress__color-line_2"></div>
+              </div>
+            </div>
+            <div class="progress__box progress__box_low">
+              <div class="progress__square"></div>
+              <div class="progress__titles">
+                <h3 class="progress__title progress__title_inbox">
+                  Project Title
+                </h3>
+                <h4 class="progress__subtitle progress__subtitle_inbox">
+                  Design & Development
+                </h4>
+              </div>
+              <div class="progress__update">Last updated Today at 4:24 AM</div>
+              <div class="progress__time">
+                <img
+                  src="ClockDark.96cc345d15fe378db3e9.svg"
+                  alt="time"
+                  class="progress__icon"
+                />
+                <span>26:30</span>
+              </div>
+              <div class="progress__comments">
+                <img
+                  src="Says.bcfe3b66bde14225bebe.svg"
+                  alt="comments"
+                  class="progress__icon"
+                />
+                <span>624</span>
+              </div>
+              <div class="progress__line">
+                <div class="progress__color-line progress__color-line_3"></div>
+              </div>
+            </div>
+            <div class="progress__box progress__box_low">
+              <div class="progress__square"></div>
+              <div class="progress__titles">
+                <h3 class="progress__title progress__title_inbox">
+                  Project Title
+                </h3>
+                <h4 class="progress__subtitle progress__subtitle_inbox">
+                  Design & Development
+                </h4>
+              </div>
+              <div class="progress__update">Last updated Today at 4:24 AM</div>
+              <div class="progress__time">
+                <img
+                  src="ClockDark.96cc345d15fe378db3e9.svg"
+                  alt="time"
+                  class="progress__icon"
+                />
+                <span>26:30</span>
+              </div>
+              <div class="progress__comments">
+                <img
+                  src="Says.bcfe3b66bde14225bebe.svg"
+                  alt="comments"
+                  class="progress__icon"
+                />
+                <span>624</span>
+              </div>
+              <div class="progress__line">
+                <div class="progress__color-line progress__color-line_4"></div>
+              </div>
+            </div>
+          </section>
+          <section class="progress">
+            <header class="progress__header">
+              <div class="progress__titles">
+                <h3 class="progress__title">Crunch some Numbers</h3>
+                <h4 class="progress__subtitle">
+                  This table will show you how your current projects are
+                  behaving.
+                </h4>
+              </div>
+              <div class="progress__timeline">
+                <label for="time-selectID-second" class="progress__label"
+                  >Timeline:</label
+                >
+                <select
+                  name="time-select"
+                  id="time-selectID-second"
+                  class="progress__select select select_grey"
+                >
+                  <option value="7 days" class="select__option" selected>
+                    7 days
+                  </option>
+                  <option value="6 days" class="select__option">6 days</option>
+                  <option value="5 days" class="select__option">5 days</option>
+                </select>
+              </div>
+            </header>
+            <div class="progress__container">
+              <div class="progress__box progress__box_sm">
+                <header class="progress__header progress__header_box">
+                  <div class="progress__titles">
+                    <h3 class="progress__title progress__title_inbox">
+                      Client Hours
+                    </h3>
+                    <h4 class="progress__subtitle progress__subtitle_inbox">
+                      Working Hours
+                    </h4>
+                  </div>
+                </header>
+                <div class="progress__client hours">
+                  <div class="progress__pie-chart hours____pie-chart"></div>
+                  <div class="hours__item">
+                    <div class="hours__color"></div>
+                    <div class="hours__name">Sweet & Simple LTD.</div>
+                    <div class="hours__amount">50</div>
+                  </div>
+                  <div class="hours__item">
+                    <div class="hours__color"></div>
+                    <div class="hours__name">Nike Running Shoes</div>
+                    <div class="hours__amount">20</div>
+                  </div>
+                  <div class="hours__item">
+                    <div class="hours__color"></div>
+                    <div class="hours__name">Some Cool Company</div>
+                    <div class="hours__amount">30</div>
+                  </div>
+                </div>
+              </div>
+              <div class="progress__box progress__box_sm user">
+                <div class="user__avatar">
+                  <img
+                    src="8080554435_c98f2dfdab_k.aa1ed3a4afeb772f871e.svg"
+                    alt="photo"
+                    class="user__photo"
+                  />
+                  <div class="user__online"></div>
+                </div>
+                <div class="user__name">Jake Appleseed</div>
+                <div class="user__city">London, UK</div>
+                <div class="user__statistics statistics">
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">Working hours</span>
+                    <span class="statistics__data">14 hours</span>
+                  </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">Ammount Total</span>
+                    <span class="statistics__data">$ 6,269</span>
+                  </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">Overdue</span>
+                    <span class="statistics__data">$ 829</span>
+                  </div>
+                  <div class="statistics__item">
+                    <span class="statistics__subtitle">% overall work</span>
+                    <span class="statistics__data">48%</span>
+                  </div>
+                </div>
+                <a class="user__mail" href="mailto:krayanskaya_ov@mail.ru"
+                  >Send Invoice</a
+                >
+              </div>
+              <div class="progress__box progress__box_sm">
+                <header class="progress__header progress__header_box">
+                  <div class="progress__titles">
+                    <h3 class="progress__title progress__title_inbox">
+                      Total Overdue
+                    </h3>
+                    <h4 class="progress__subtitle progress__subtitle_inbox">
+                      I need Dollars
+                    </h4>
+                  </div>
+                </header>
+                <div class="progress__sum">$14,220</div>
+                <div id="line-chart" class="ct-chart"></div>
+              </div>
+              <button class="progress__export">Export PDF</button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
