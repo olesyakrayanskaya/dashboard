@@ -2,6 +2,7 @@
 import 'chartist/dist/index.css';
 import { LineChart } from 'chartist';
 import { BarChart } from 'chartist';
+import { PieChart } from 'chartist';
 
 const progressSelect = document.getElementById('progress-selectID');
 const progressSelectBars = document.getElementById('progress-select-bars');
@@ -22,6 +23,12 @@ let seriesLineChart = [15, 10, 15, 8, 14, 9, 14];
 const barChartOptions = {
   distributeSeries: true,
   height: 200,
+  axisY: {
+    showLabel: true,
+    labelInterpolationFnc: function (value, index) {
+      return index % 2 === 0 ? value : null;
+    },
+  },
 };
 const waveChartOptions = {
   width: 100 + '%',
@@ -97,6 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
           style: 'stroke-width: 20px',
         });
       }
+    }
+  );
+  new PieChart(
+    '.progress__pie-chart',
+    {
+      series: [50, 20, 30],
+    },
+    {
+      donut: true,
+      donutWidth: 30,
+      startAngle: 120,
+      showLabel: true,
     }
   );
   new LineChart('#line-chart', chartData('line'), lineChartOptions);

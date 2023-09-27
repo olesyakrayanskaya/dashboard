@@ -165,9 +165,9 @@
     width: 16px;
     height: 16px;
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
     margin: 0 10px;
   }
 
@@ -217,9 +217,83 @@
     height: 8px;
     border-radius: 4px;
     background-color: variables.$grey;
+    position: relative;
 
     @media (max-width: 1010px) {
       margin-top: 10px;
+    }
+  }
+
+  &__color-line {
+    width: 80%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #b8208a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: width-transform 2s linear 0.5s 1 normal forwards;
+  }
+
+  &__color-line_2 {
+    background-color: #3b2268;
+    width: 60%;
+    animation: width-transform-2 2.5s linear 0.5s 1 normal forwards;
+  }
+
+  &__color-line_3 {
+    background-color: #2534bb;
+    width: 70%;
+    animation: width-transform-3 3s linear 0.5s 1 normal forwards;
+  }
+
+  &__color-line_4 {
+    background-color: #14e930;
+    width: 50%;
+    animation: width-transform-4 3.5s linear 0.5s 1 normal forwards;
+  }
+
+  @keyframes width-transform {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 80%;
+      opacity: 100%;
+    }
+  }
+
+  @keyframes width-transform-2 {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 60%;
+      opacity: 100%;
+    }
+  }
+
+  @keyframes width-transform-3 {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 70%;
+      opacity: 100%;
+    }
+  }
+
+  @keyframes width-transform-4 {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 50%;
+      opacity: 100%;
     }
   }
 
@@ -267,5 +341,45 @@
     position: absolute;
     bottom: 32px;
     right: 25px;
+  }
+
+  &__pie-chart {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
+  }
+}
+
+.hours {
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    line-height: 14px;
+    color: #a1b1c2;
+    font-weight: 400;
+    font-family: 'Open Sans';
+    margin-bottom: 15px;
+
+    &:nth-child(2) .hours__color {
+      background-color: #b8208a;
+    }
+
+    &:nth-child(3) .hours__color {
+      background-color: #c542d6;
+    }
+  }
+
+  &__amount {
+    margin-left: auto;
+  }
+
+  &__color {
+    width: 10px;
+    height: 10px;
+    background-color: #df63c0;
+    border-radius: 50%;
+    margin-right: 15px;
   }
 }
